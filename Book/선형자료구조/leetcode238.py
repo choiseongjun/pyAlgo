@@ -7,7 +7,7 @@ def mul(li):
         p=p*li[i]
     p=1
     #오른쪾부터 시작 [24,12,4,1]
-    for i in range(len(li)-1,0-1,-1):
+    for i in range(len(li)-1,-1,-1):
         out[i]=out[i]*p
         p=p*li[i]
     return out
