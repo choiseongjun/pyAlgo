@@ -10,15 +10,15 @@ for i in text:
     elif i=='>':
         check=False
         answer+=i
+    elif check:
+        answer+=i
     elif i==' ':
         answer+=tmp[::-1]+i
         tmp=''
-    elif check:
-        answer+=i
     else:
         tmp+=i
-
 print(answer)
+
 
 #먼저 <시작될때부터 check로 True False를 걸어준다음 Check를 걸면
 #그 <>안에 내용만 따로 출력되고 else는 괄호밖에 출력된다
