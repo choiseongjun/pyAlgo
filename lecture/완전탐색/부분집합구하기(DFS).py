@@ -5,7 +5,6 @@ def DFS(v):
             if ch[i]==1:
                 print(i,end=' ')
         print()
-
     else:
         ch[v]=1
         DFS(v+1)
