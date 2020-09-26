@@ -1,3 +1,1 @@
-n=int(input())
-
-print(str(n))
+print(oct(int(input(), 2))[2:])
