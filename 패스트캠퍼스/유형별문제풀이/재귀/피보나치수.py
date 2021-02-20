@@ -1,11 +1,15 @@
-def fibo(n):
-    print(n)
-    if n==1:
-        print()
+
+def fibo(a):
+
+    if a<2:
+        return a
     else:
-        fibo(n-1)
+        return fibo(a-1)+fibo(a-2)
 
 
 a= 10
-fibo(a)
+n=10
+sum=0
+sum+=fibo(a)
+print(sum)
 

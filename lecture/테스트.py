@@ -1,27 +1,25 @@
 
+n,m = map(int,input().split())
+a = list(map(int,input().split()))
+lt = 0
+rt = 1
+tot = a[0]
+cnt=0
+while True:
+    if tot<m:
+        if rt<n:
+            tot+=a[rt]
+            rt+=1
+        else:
+            break
+    elif tot==m:
+        cnt+=1
+        tot-=a[lt]
+        lt+=1
+    else:
+        tot-=a[lt]
+        lt+=1
 
-n = int(input())
-
-a=list(map(int,input().split()))
-
-
-b=[]
-def digit_sum(x):
-    sum=0
-    while x>0:
-        sum+=x%10
-        x//=10
-    return sum
-
-
-max=-2147000000
-for i in a:
-    tot=digit_sum(i)
-    if tot>max:
-        max=tot
-        res=i
-print(res)
-# print(b)
-
-# 3
-# 125 15232 97
+print(cnt)
+# 8 3
+# 1 2 1 3 1 1 1 1 2
