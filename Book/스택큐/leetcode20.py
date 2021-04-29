@@ -6,10 +6,8 @@ def isValid(s):
             '}':'{',
             ']':'[',
             }
-
     for char in s:
         if char not in table:
-            print(char)
             stack.append(char)
         elif not stack or table[char]!=stack.pop():
             return False
