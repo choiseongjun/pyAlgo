@@ -12,8 +12,8 @@ def DFS(L,sum,time):
 
 if __name__=="__main__":
     n,m=map(int,input().split())
-    pv=list()
-    pt=list()
+    pv=list()#최대점수
+    pt=list()#제한시간
     for i in range(n):
         a,b=map(int,input().split())
         pv.append(a)

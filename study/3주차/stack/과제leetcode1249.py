@@ -1,25 +1,25 @@
 def minRemoveToMakeValid(s):
-
     stack = []
-    answer = []
+    ans = []
 
-    for i,e in enumerate(s):
-        answer.append(e)
-        if e == '(':
-            stack.append((i,e))
-        elif e == ')':
-            if stack and stack[-1][1] == '(':
+    # 1. find all brackets
+    for idx, value in enumerate(s):
+        ans.append(value)
+        if value == '(':#(이면 인덱스와 밸류를 넣는
+            stack.append((idx, value))
+        elif value == ')':
+            if stack and stack[0][1] == '(':#스택에 처음담긴걸 뺴버린다.
                 stack.pop()
             else:
-                stack.append((i,e))
+                stack.append((idx, value))
+    #유효하지 않은 괄호를 뺴버린다
+    for e in stack[::-1]:
+        ans.pop(e[0])
 
-        for e in stack[::-1]:
-            answer.pop(e[0])
-
-        return ''.join(answer)
+    return ''.join(ans)
 
 
 if __name__ == '__main__':
-    s="lee (t (c) o) de)"
+    s="(a(b(c)d)"
     res = minRemoveToMakeValid(s)
     print(res)
