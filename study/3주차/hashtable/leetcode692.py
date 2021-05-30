@@ -14,11 +14,10 @@ import heapq
 #
 #     return li
 def topKFrequent( words, k: int):
-    d = collections.Counter(words) # count the frequency of each word
-    words = list(set(words)) # form the list with unique words
-    print(words)
-    words.sort() #first sort it by alphabetical order
-    words = sorted(words, key = lambda x: d[x], reverse = True) #then sort it by frequency in reverse order
+    collections.Counter(words) # 각 단어별로 집계하
+    words = list(set(words)) # 셋으로 구분해서 리스트 담
+    words.sort() #알파벳순으로 소팅
+    words = sorted(words, key = lambda x: d[x], reverse = True)
     return words[:k]
 
 if __name__ == '__main__':
